@@ -1,4 +1,6 @@
 FROM maven:3.6-jdk-8
 WORKDIR /src/usr/app/
+ARG SERGIO
+ENV SERGIO=${SERGIO}
 COPY . .
-CMD mvn clean install
+ENTRYPOINT exec sh test.sh

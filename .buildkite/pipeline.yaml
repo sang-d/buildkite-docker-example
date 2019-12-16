@@ -1,5 +1,5 @@
 steps:
-  - command: "docker build -t dummy-image ."
+  - command: echo $SERGIO
+  - command: "docker build -t dummy-image . --build-arg SERGIO" 
   - wait
-  - command: echo 123
-  - command: "docker run dummy-image"
+  - command: "docker run --env OTHER=$OTHER dummy-image"
